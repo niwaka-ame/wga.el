@@ -12,7 +12,7 @@ These correspond to two commands: `wga-open-in-browser' and `wga-insert-link-in-
 Emacsers who'd like to quickly refer to an art piece in their Org Mode notes, or simply to fuzzy search and browse an art piece on WGA.
 
 ** Disclaimer
-This program is part of WGA.
+This program is NOT part of WGA.
 The data associated with this program comes from WGA.
 
 ** Known issue
