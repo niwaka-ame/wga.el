@@ -7,8 +7,8 @@
 ;; Created: March 23, 2024
 ;; Modified: March 23, 2024
 ;; Version: 0.0.1
-;; Keywords: abbrev bib c calendar comm convenience data docs emulations extensions faces files frames games hardware help hypermedia i18n internal languages lisp local maint mail matching mouse multimedia news outlines processes terminals tex tools unix vc wp
-;; Homepage: https://github.com/yu/wga
+;; Keywords: convenience data tools multimedia
+;; Homepage: https://github.com/niwaka-ame/wga.el
 ;; Package-Requires: ((emacs "24.4"))
 ;;
 ;; This file is not part of GNU Emacs.
@@ -24,7 +24,7 @@
 ;;  Then the chosen item can be either opened in browser (to the WGA page) or inserted as a link in Org Mode.
 ;;  These correspond to two commands: `wga-open-in-browser' and `wga-insert-link-in-org-mode'.
 ;;
-;;  This program is part of WGA.
+;;  This program is NOT part of WGA.
 ;;  The data associated with this program comes from WGA.
 ;;
 ;;; Code:
