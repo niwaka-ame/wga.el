@@ -6,7 +6,7 @@
 ;; Maintainer: Yu Huo <yhuo@tuta.io>
 ;; Created: March 23, 2024
 ;; Modified: March 23, 2024
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Keywords: convenience data tools multimedia
 ;; Homepage: https://github.com/niwaka-ame/wga.el
 ;; Package-Requires: ((emacs "24.4"))
@@ -68,7 +68,10 @@
          (split-string (buffer-substring-no-properties
                         (line-beginning-position)
                         (line-end-position)) sep)))
-    `[,(concat (car splitted-line) "\t" (elt splitted-line 2)) ,(elt splitted-line 6)]))
+    `[,(concat (car splitted-line) "\t"
+               (elt splitted-line 2) "\t"
+               (elt splitted-line 3))
+      ,(elt splitted-line 6)]))
 
 
 (defun wga--query (table)
@@ -90,8 +93,10 @@
     (wga--load-catalog))
   (let* ((data (wga--query wga-catalog-data))
          (link (elt data 0))
-         (text-list (split-string (elt data 1) "\"" t))
-         (desc (concat (string-trim-left (elt text-list 1)) " by " (car text-list))))
+         (text-list (split-string (elt data 1) "\t" t))
+         (art-name (elt text-list 1))
+         (auth-name (replace-regexp-in-string "\"" "" (elt text-list 0)))
+         (desc (concat (string-trim-left art-name) " by " auth-name)))
     (insert (concat "[[" link "][" desc "]] "))))
 
 (provide 'wga)
