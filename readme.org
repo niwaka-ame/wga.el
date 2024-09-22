@@ -4,9 +4,12 @@
 A small program to allow quick search in the art catalog of the Web Gallery of Art (WGA).
 
 The program allows user to search and choose from the whole list of art pieces by and the title and the author's name.
-Users are recommended to use a completion interface like `ivy' to achieve fuzzy search.
+Users are recommended to use a completion interface like ~vertico~ or ~ivy~ to achieve fuzzy search.
 Then the chosen item can be either opened in browser (to the WGA page) or inserted as a link in Org Mode.
-These correspond to two commands: `wga-open-in-browser' and `wga-insert-link-in-org-mode'.
+These correspond to two commands: ~wga-open-in-browser~ and ~wga-insert-link-in-org-mode~.
+
+** Dependency
+[[https://elpa.gnu.org/packages/persist.html][persist 0.6.1]]
 
 ** Target users
 Emacsers who'd like to quickly refer to an art piece in their Org Mode notes, or simply to fuzzy search and browse an art piece on WGA.
@@ -16,6 +19,6 @@ This program is NOT part of WGA.
 The data associated with this program comes from WGA.
 
 ** Known issue
-The data are lazy loaded but slow - it will take around half a minute when a `wga-*' command is triggered for the first time in an Emacs instance.
-There's no performance issue after the first command.
-PR is welcomed to improve this!
+The data are lazy loaded but parsing is slow - it will take around half a minute when a `wga-*' command is triggered for the first time after installation.
+
+There should be no performance issue after that - with the help of the ~persist~ package, the parsed data will persist across different Emacs sessions.

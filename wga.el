@@ -6,10 +6,10 @@
 ;; Maintainer: Yu Huo <yhuo@tuta.io>
 ;; Created: March 23, 2024
 ;; Modified: March 23, 2024
-;; Version: 0.0.2
+;; Version: 0.0.3
 ;; Keywords: convenience data tools multimedia
 ;; Homepage: https://github.com/niwaka-ame/wga.el
-;; Package-Requires: ((emacs "24.4"))
+;; Package-Requires: ((emacs "24.4") (persist "0.6.1"))
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -30,8 +30,9 @@
 ;;; Code:
 
 (require 'subr-x)
+(require 'persist)
 
-(defvar wga-catalog-data nil)
+(persist-defvar wga-catalog-data nil "hash table that stores the parsed WGA catalog.")
 
 (defun wga--find-data-file (file)
   "Find curated data FILE in this repo."
